@@ -1,7 +1,0 @@
-C:\Users\nasse\source\repos\GADE_6112-Project2\GADE_6112-Project2\obj\Debug\net6.0-windows\GADE_6112-Project2.csproj.AssemblyReference.cache
-C:\Users\nasse\source\repos\GADE_6112-Project2\GADE_6112-Project2\obj\Debug\net6.0-windows\GADE_6112_Project2.Form1.resources
-C:\Users\nasse\source\repos\GADE_6112-Project2\GADE_6112-Project2\obj\Debug\net6.0-windows\GADE_6112-Project2.csproj.GenerateResource.cache
-C:\Users\nasse\source\repos\GADE_6112-Project2\GADE_6112-Project2\obj\Debug\net6.0-windows\GADE_6112-Project2.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\nasse\source\repos\GADE_6112-Project2\GADE_6112-Project2\obj\Debug\net6.0-windows\GADE_6112-Project2.AssemblyInfoInputs.cache
-C:\Users\nasse\source\repos\GADE_6112-Project2\GADE_6112-Project2\obj\Debug\net6.0-windows\GADE_6112-Project2.AssemblyInfo.cs
-C:\Users\nasse\source\repos\GADE_6112-Project2\GADE_6112-Project2\obj\Debug\net6.0-windows\GADE_6112-Project2.csproj.CoreCompileInputs.cache

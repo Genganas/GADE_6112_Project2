@@ -4,30 +4,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GADE_6112_Project2
+namespace GADE_6112_Project1
 {
-     internal class Swamp_Creature : Enemy
+    internal class Swamp_Creature : Enemy
     {   // Sets the swamp creatures hp to 10 and damage to 1
-        public Swamp_Creature(int x, int y, int hp, int MaxHp, int damage) : base(x, y, hp, MaxHp, damage)
+        public Swamp_Creature(int x, int y) : base(x, y, 10, 10, 1)
         {
-            hp = 10;
-            damage = 1;
 
         }
         // Creates random movement for the swamp creature and then checks for the an empty space to move
         public override Movement ReturnMove(Movement movement = Movement.NoMovement)
         {
-            Random RndDirection = new Random();
-            int RandomMove = RndDirection.Next(0, 4);
+            int RandomMove;
             bool drloop = false;
+
+            bool foundEmpty = false;
+            for (int i = 0; i < VisionTiles.Length; i++)
+            {
+                if (VisionTiles[i].Type == Tiletype.EmptyTile)
+                {
+                    foundEmpty = true;
+                    break;
+                }
+            }
+            if (!foundEmpty) return Movement.NoMovement;
+
             do
             {
-
-                if (VisionTiles[RandomMove] != Tile.Tiletype.EmptyTile)
+                RandomMove = base.random.Next(4);
+                if (VisionTiles[RandomMove].Type != Tiletype.EmptyTile)
                 {
                     drloop = true;
                 }
+                else drloop = false;
             } while (drloop);
+
             switch (RandomMove) // Switch used to determine the direction 
             {
                 case 0:
@@ -39,7 +50,7 @@ namespace GADE_6112_Project2
                 case 3:
                     return Movement.Right;
                 default:
-                    return Movement.noMovement;
+                    return Movement.NoMovement;
 
             }
 
@@ -47,5 +58,3 @@ namespace GADE_6112_Project2
     }
 
 }
-
-

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GADE_6112_Project2
+namespace GADE_6112_Project1
 {
     public abstract class Tile
     {
@@ -17,6 +17,9 @@ namespace GADE_6112_Project2
             this.y = y;
         }
         //Tiletype enum for the types of tiles
+        /// <summary>
+        /// Hero, Enemy, Gold, Weapon, EmptyTile, Obstacle
+        /// </summary>
         public enum Tiletype
         {
             Hero,
@@ -32,5 +35,3 @@ namespace GADE_6112_Project2
         public Tiletype Type { get; set; }
     }
 }
-
-

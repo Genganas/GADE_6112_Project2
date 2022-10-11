@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GADE_6112_Project2
+namespace GADE_6112_Project1
 {
-    internal class Obstacle : Tile
+     abstract class Item:Tile
     {
-        public Obstacle(int x, int y) : base(x, y)
+        public Item(int x, int y) : base(x, y)
         {
-
         }
-    }
 
+        
+    }
 }

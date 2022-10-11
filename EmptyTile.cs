@@ -4,17 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GADE_6112_Project2
+namespace GADE_6112_Project1
 {
     internal class EmptyTile : Tile
     {
         public EmptyTile(int x, int y) : base(x, y)
         {
         }
-
-        public EmptyTile(int x, int y, int v, int v1) : base(x, y)
-        {
-        }
     }
-
 }
