@@ -11,7 +11,10 @@ namespace GADE_6112_Project1
         public Item(int x, int y) : base(x, y)
         {
         }
+        public override string ToString()
+        {
+            return base.ToString();
+        }
 
-        
     }
 }
