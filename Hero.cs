@@ -11,7 +11,7 @@ namespace GADE_6112_Project1
     {
        
 
-       public Hero(int x, int y, int hp, int maxHp) : base(x, y, hp, maxHp, 2)
+       public Hero(int x, int y, int hp, int maxHp,int amount) : base(x, y, hp, maxHp, 2,0)
         {
 
         }
@@ -24,7 +24,7 @@ namespace GADE_6112_Project1
 
         public override string ToString() // String that displays the hero's stats
         {
-            return $"Player Stats: \nHP: {hp}/{maxhp} \nDamage: {damage} \n[{x},{y}]";
+            return $"Player Stats: \nHP: {hp}/{maxhp} \nDamage: {damage} \nGold: {amount} \n[{x},{y}]";
         }
 
       

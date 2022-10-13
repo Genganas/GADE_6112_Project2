@@ -20,6 +20,7 @@ namespace GADE_6112_Project1
             protected int hp; // Health points 
             protected int maxhp; // Max Health
             protected int damage; // Attack damage
+            protected int amount;
             protected Tile[] visionTiles = new Tile[4]; // Vision array
 
             /// <summary>
@@ -33,11 +34,12 @@ namespace GADE_6112_Project1
                 Right,
                 NoMovement
             }
-            public Character(int x, int y, int hp, int maxHp, int damage) : base(x, y) //Constuctor
+            public Character(int x, int y, int hp, int maxHp, int damage,int amount) : base(x, y) //Constuctor
             {
                 this.hp = hp;
                 this.maxhp = maxHp;
                 this.damage = damage;
+                this.amount = amount;
             }
 
             public Tile[] VisionTiles { get => visionTiles; set => visionTiles = value; }
@@ -95,6 +97,16 @@ namespace GADE_6112_Project1
 
             public abstract Movement ReturnMove(Movement move = Movement.NoMovement); // returns the direction 
             public abstract override string ToString();
+
+            public void Pickup(Item i)
+            {
+                bool valueCheck= false;
+                if (i == default(Item))
+                {
+                    valueCheck = true;
+                }
+                    
+            }
 
         }
     }

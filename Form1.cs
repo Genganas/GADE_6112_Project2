@@ -3,10 +3,16 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
+using System.Xml.Linq;
+using GADE_6112_Project1.GADE_6112_Project1;
+using static GADE_6112_Project1.GADE_6112_Project1.Character;
 
 namespace GADE_6112_Project1
 {
@@ -21,17 +27,19 @@ namespace GADE_6112_Project1
         private void Form1_Activated(object sender, EventArgs e)
         {
             redMap.Text = gameEngine.ToString();
+         
+
         }
 
         private void btnAttack_Click(object sender, EventArgs e)
         {
-           
+
             if (gameEngine.map.Enemies[cmbEnemyatk.SelectedIndex].isDead())
 
             {
                 gameEngine.Map.GameMap[
                     gameEngine.map.Enemies[cmbEnemyatk.SelectedIndex].Y,
-                    gameEngine.map.Enemies[cmbEnemyatk.SelectedIndex].X
+                    gameEngine.map.Enemies[cmbEnemyatk.SelectedIndex].X]
                  = new EmptyTile(
                         gameEngine.Map.Enemies[cmbEnemyatk.SelectedIndex].X,
                         gameEngine.Map.Enemies[cmbEnemyatk.SelectedIndex].Y)
@@ -51,6 +59,10 @@ namespace GADE_6112_Project1
             }
             redMap.Text = gameEngine.map.ToString();
         }
+        private void EventHandler(Character.Movement move)
+        {
+            gameEngine.MovePlayer(move);
+        }
 
         private void btnLeft_Click(object sender, EventArgs e)
         {
@@ -68,19 +80,33 @@ namespace GADE_6112_Project1
 
         private void btnRight_Click(object sender, EventArgs e)
         {
-            gameEngine.MovePlayer(GADE_6112_Project1.Character.Movement.Right);
+
             redMap.Text = gameEngine.ToString();
             outputInfoTextBox.Text = gameEngine.Map.HeroPlayer.ToString();
-
+            EventHandler(Character.Movement.Up);
         }
 
         private void btnDown_Click(object sender, EventArgs e)
         {
-           
             gameEngine.MovePlayer(GADE_6112_Project1.Character.Movement.Down);
             redMap.Text = gameEngine.ToString();
             outputInfoTextBox.Text = gameEngine.Map.HeroPlayer.ToString();
+        }
 
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            gameEngine.Load(gameEngine);
+            GameEngine n = new GameEngine();
+            n.Load(gameEngine);
+            redMap.Text = n.Load(gameEngine);
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            gameEngine.Save(gameEngine);
+            string message = "Game has been saved";
+            string title = "Save file";
+            MessageBox.Show(message, title);
         }
     }
 }

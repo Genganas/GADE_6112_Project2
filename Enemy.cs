@@ -11,7 +11,7 @@ namespace GADE_6112_Project1
     {
         protected Random random = new Random();
 
-        public Enemy(int x, int y, int hp, int maxHp, int damage) : base(x, y, hp, maxHp, damage)
+        public Enemy(int x, int y, int hp, int maxHp, int damage, int amount) : base(x, y, hp, maxHp, damage,amount)
         {
         }
         public override string ToString() //Output string for enemy

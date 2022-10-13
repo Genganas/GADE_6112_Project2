@@ -8,7 +8,7 @@ namespace GADE_6112_Project1
 {
     internal class Swamp_Creature : Enemy
     {   // Sets the swamp creatures hp to 10 and damage to 1
-        public Swamp_Creature(int x, int y) : base(x, y, 10, 10, 1)
+        public Swamp_Creature(int x, int y) : base(x, y, 10, 10, 1,0)
         {
 
         }

@@ -36,12 +36,15 @@
             this.btnRight = new System.Windows.Forms.Button();
             this.btnDown = new System.Windows.Forms.Button();
             this.cmbEnemyatk = new System.Windows.Forms.ComboBox();
-            this.lblplayerstats = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnLoad = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.saveFileDialog2 = new System.Windows.Forms.SaveFileDialog();
             this.SuspendLayout();
             // 
             // redMap
             // 
-            this.redMap.Location = new System.Drawing.Point(12, 12);
+            this.redMap.Location = new System.Drawing.Point(12, 27);
             this.redMap.Name = "redMap";
             this.redMap.Size = new System.Drawing.Size(487, 328);
             this.redMap.TabIndex = 0;
@@ -113,21 +116,33 @@
             this.cmbEnemyatk.Size = new System.Drawing.Size(263, 24);
             this.cmbEnemyatk.TabIndex = 7;
             // 
-            // lblplayerstats
+            // btnSave
             // 
-            this.lblplayerstats.AutoSize = true;
-            this.lblplayerstats.Location = new System.Drawing.Point(854, 126);
-            this.lblplayerstats.Name = "lblplayerstats";
-            this.lblplayerstats.Size = new System.Drawing.Size(77, 16);
-            this.lblplayerstats.TabIndex = 8;
-            this.lblplayerstats.Text = "Player stats";
+            this.btnSave.Location = new System.Drawing.Point(876, 450);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 9;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnLoad
+            // 
+            this.btnLoad.Location = new System.Drawing.Point(985, 450);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(75, 23);
+            this.btnLoad.TabIndex = 10;
+            this.btnLoad.Text = "Load";
+            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1126, 485);
-            this.Controls.Add(this.lblplayerstats);
+            this.ClientSize = new System.Drawing.Size(1164, 514);
+            this.Controls.Add(this.btnLoad);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.cmbEnemyatk);
             this.Controls.Add(this.btnDown);
             this.Controls.Add(this.btnRight);
@@ -140,7 +155,6 @@
             this.Text = "Form1";
             this.Activated += new System.EventHandler(this.Form1_Activated);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -154,7 +168,10 @@
         private System.Windows.Forms.Button btnRight;
         private System.Windows.Forms.Button btnDown;
         private System.Windows.Forms.ComboBox cmbEnemyatk;
-        private System.Windows.Forms.Label lblplayerstats;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnLoad;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog2;
     }
 }
 

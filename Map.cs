@@ -10,16 +10,18 @@ namespace GADE_6112_Project1
     {
         public Tile[,] map;
         public Hero hero;   //A Hero object to represent the player character
-        public Enemy[] enemies;    //An Enemy array for the enemies
+        public Enemy[] enemies;   //An Enemy array for the enemies
+        public Item[] items;////3.1 Items array
         public int mapHeight, mapWidth;   //Variables for storing the map’s width and height
         public Random rnd = new Random();   // A Random object for randomising numbers.
-
-        public Map(int minWidth, int maxWidth, int minHeight, int maxHeight, int enemyCount)
+        
+        public Map(int minWidth, int maxWidth, int minHeight, int maxHeight, int enemyCount,int itemCount)
         {
-            hero = new Hero(5, 5, 100, 100);
+            hero = new Hero(5, 5, 100, 100, 0);
             mapWidth = rnd.Next(minWidth, maxWidth);
             mapHeight = rnd.Next(minHeight, maxHeight);
             map = new Tile[mapWidth, mapHeight];
+            
 
             for (int i = 0; i < mapWidth; i++)
             {
@@ -41,15 +43,21 @@ namespace GADE_6112_Project1
             }
             hero = (Hero)Create(Tile.Tiletype.Hero);
             enemies = new Enemy[enemyCount];
+            items = new Item[itemCount]; ///3.1 amount
                 
             for (int j = 0; j < enemyCount; j++)
             {
                 enemies[j] = (Swamp_Creature)Create(Tile.Tiletype.Enemy);
             }
+            for (int j = 0; j < itemCount; j++) ////3.1 
+            {
+                items[j] = (Item)Create(Tile.Tiletype.Gold); 
+            }
         }
         public Tile[,] GameMap { get => map; }
         public Hero HeroPlayer { get => hero; }
         public Enemy[] Enemies { get => enemies; }
+        public Item[] Items { get => items; } //3.1
         public int MapWidth { get => mapWidth; }
         public int MapHeight { get => mapHeight; }
 
@@ -63,6 +71,7 @@ namespace GADE_6112_Project1
             vision[2] = map[hero.X - 1, hero.Y]; //left
             vision[3] = map[hero.X + 1, hero.Y]; //right
             hero.VisionTiles = vision;
+
 
             //Enemies
             for (int i = 0; i < enemies.Length; i++)
@@ -91,13 +100,17 @@ namespace GADE_6112_Project1
             switch (type)
             {
                 case Tile.Tiletype.Hero:
-                    Hero playerhero = new Hero(rndmX, rndmY,10,10) { Type = type };
+                    Hero playerhero = new Hero(rndmX, rndmY,10,10, 0) { Type = type };
                     map[rndmX, rndmY] = playerhero;
                     return playerhero;
                 case Tile.Tiletype.Enemy:
                     Swamp_Creature swamp_Creature = new Swamp_Creature(rndmX, rndmY) { Type = type };
                     map[rndmX, rndmY] = swamp_Creature;
                     return swamp_Creature;
+                case Tile.Tiletype.Gold:
+                    Gold gold = new Gold(rndmX, rndmY) { Type = type };
+                    map[rndmX,rndmY] = gold;
+                    return gold;
                 default:
                     return new EmptyTile (rndmX,rndmY);
                     
