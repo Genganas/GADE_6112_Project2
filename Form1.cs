@@ -30,12 +30,12 @@ namespace GADE_6112_Project1
 
             {
                 gameEngine.Map.GameMap[
-                    gameEngine.map.Enemies[ cmbEnemyatk.SelectedIndex].Y,
+                    gameEngine.map.Enemies[cmbEnemyatk.SelectedIndex].Y,
                     gameEngine.map.Enemies[cmbEnemyatk.SelectedIndex].X
-                ] = new EmptyTile(
+                 = new EmptyTile(
                         gameEngine.Map.Enemies[cmbEnemyatk.SelectedIndex].X,
-                        gameEngine.Map.Enemies[cmbEnemyatk.SelectedIndex].Y )
-                { Type = Tile.Tiletype.EmptyTile };
+                        gameEngine.Map.Enemies[cmbEnemyatk.SelectedIndex].Y)
+                {Type = Tile.Tiletype.EmptyTile };
 
                 redMap.Text = gameEngine.map.ToString();
                 return;
